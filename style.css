@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    min-height: 100vh;
+    line-height: 1.5;
+}
+img, picture {
+    max-width: 100%;
+    display: block;
+}
+
+:root {
+    --Purple--50: hsl(260, 100%, 95%);
+    --Purple--300: hsl(264, 82%, 80%);
+    --Purple--500: hsl(263, 55%, 52%);
+    --White: hsl(0, 0%, 100%);
+    --Grey--100: hsl(214, 17%, 92%);
+    --Grey--200: hsl(0, 0%, 81%);
+    --Grey--400: hsl(224, 10%, 45%);
+    --Grey--500: hsl(217, 19%, 35%);
+    --Dark--blue: hsl(219, 29%, 14%);
+    --Black: hsl(0, 0%, 7%);
+    --fs: 0.813rem;
+    --fw--regular: 500;
+    --fw--bold: 600;
+}
+
+body {
+    background-color: var(--Grey--100);
+    color: var(--White);
+    margin: 2rem;
+    font-family:"Barlow Semi Condensed", sans-serif;
+    font-size: var(--fs);
+    display: grid;
+    place-content: center;
+
+}
+main {
+    display: grid;
+    place-content: center;
+    gap: 1.5rem;
+    max-width: 1000px;
+}
+.review {
+    border-radius: .5rem;
+    padding: 1.5rem;
+    box-shadow: 20px 20px 20px hsl(217, 19%, 35%,.3);
+}
+span {
+    font-weight: var(--fw--bold);
+    font-size: 1rem;
+}
+.review__info {
+    margin-block-start: 1rem;
+    color: var(--Grey--100);
+}
+.review:nth-child(1) {
+    background-color: var(--Purple--500);
+}
+.review:nth-child(2) {
+    background-color: var(--Grey--500);
+}
+.review:nth-child(3), .review:nth-child(5) {
+    background-color: var(--White);
+    color: var(--Grey--500);
+}
+.review:nth-child(4) {
+    background-color: var(--Dark--blue);
+}
+.review__avatar {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-block-end: 1rem;
+}
+.review__img {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    border: 1px solid var(--White);
+}
+.review__id {
+    font-weight: var(--fw--bold);
+}
+.subtitle {
+    color: var(--Grey--200);
+    font-weight: lighter;
+} 
+.sub3 , .sub5, .info3, .info5 {
+    color: var(--Grey--400);
+}
+.attribution  {
+    margin: 1rem;
+    color: var(--Black);
+}
+
+@media (min-width: 48rem) {
+    main {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+        "box1 box1 box2 box3"
+        "box4 box5 box5 box3";
+    }
+    .review {
+        min-width: 200px;
+    }
+    .review:nth-child(1) {
+        grid-area: box1;
+    }
+    .review:nth-child(2) {
+        grid-area: box2; 
+    }
+    .review:nth-child(3) {
+        grid-area: box4; 
+    }
+    .review:nth-child(4) {
+        grid-area: box5;
+    }
+    .review:nth-child(5) {
+        grid-area: box3;
+        max-width: 250px;
+    }
+}
